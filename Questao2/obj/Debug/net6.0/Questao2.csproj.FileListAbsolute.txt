@@ -1,0 +1,17 @@
+C:\mitzko\teste-ailos\Questao2\bin\Debug\net6.0\Questao2.exe
+C:\mitzko\teste-ailos\Questao2\bin\Debug\net6.0\Questao2.deps.json
+C:\mitzko\teste-ailos\Questao2\bin\Debug\net6.0\Questao2.runtimeconfig.json
+C:\mitzko\teste-ailos\Questao2\bin\Debug\net6.0\Questao2.dll
+C:\mitzko\teste-ailos\Questao2\bin\Debug\net6.0\Questao2.pdb
+C:\mitzko\teste-ailos\Questao2\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.csproj.AssemblyReference.cache
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.GeneratedMSBuildEditorConfig.editorconfig
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.AssemblyInfoInputs.cache
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.AssemblyInfo.cs
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.csproj.CoreCompileInputs.cache
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.csproj.CopyComplete
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.dll
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\refint\Questao2.dll
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.pdb
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\Questao2.genruntimeconfig.cache
+C:\mitzko\teste-ailos\Questao2\obj\Debug\net6.0\ref\Questao2.dll
