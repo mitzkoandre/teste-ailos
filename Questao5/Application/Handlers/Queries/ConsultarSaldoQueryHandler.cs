@@ -24,20 +24,26 @@ namespace Questao5.Application.Handlers.Queries
 
             var response = new ConsultarSaldoQueryResponse()
             {
-                NumeroContaCorrente = contaCorrente.Numero,
-                TitularContaCorrente = contaCorrente.Nome,
-                DataHoraConsulta = DateTime.Now,
+                DataHoraConsulta = DateTime.Now
             };
 
-            if (contaCorrente == null || !contaCorrente.Ativo)
+            if (contaCorrente == null)
             {
-                response.AddError($"{MensagemErroConstants.ContaInvalidaKey} ou {MensagemErroConstants.ContaInativaKey}");
+                response.AddError(MensagemErroConstants.ContaInvalidaKey);
+                return response;
+            }
+
+            if (!contaCorrente.Ativo)
+            {
+                response.AddError(MensagemErroConstants.ContaInativaKey);
                 return response;
             }
 
             var creditos = await _movimentoRepository.GetTotalByMovimentoTypeAsync(request.IdContaCorrente, "C");
             var debitos = await _movimentoRepository.GetTotalByMovimentoTypeAsync(request.IdContaCorrente, "D");
 
+            response.NumeroContaCorrente = contaCorrente.Numero;
+            response.TitularContaCorrente = contaCorrente.Nome;
             response.Saldo = creditos - debitos;
 
             return response;

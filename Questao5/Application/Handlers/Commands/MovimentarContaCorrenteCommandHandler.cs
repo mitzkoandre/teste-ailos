@@ -30,9 +30,15 @@ namespace Questao5.Application.Handlers.Commands
             var contaCorrente = await _contaCorrenteRepository.GetByIdAsync(request.IdContaCorrente);
             var response = new MovimentarContaCorrenteCommandResponse();
 
-            if (contaCorrente == null || !contaCorrente.Ativo)
+            if (contaCorrente == null)
             {
-                response.AddError($"{MensagemErroConstants.ContaInvalidaKey} ou {MensagemErroConstants.ContaInativaKey}");
+                response.AddError(MensagemErroConstants.ContaInvalidaKey);
+                return response;
+            }
+
+            if (!contaCorrente.Ativo)
+            {
+                response.AddError(MensagemErroConstants.ContaInativaKey);
                 return response;
             }
 
@@ -42,7 +48,7 @@ namespace Questao5.Application.Handlers.Commands
             {
                 response.AddErrors(errors);
                 return response;
-            } 
+            }
 
             var movimento = new Movimento(Guid.NewGuid(),
                                           request.IdContaCorrente,
@@ -70,7 +76,7 @@ namespace Questao5.Application.Handlers.Commands
             var tipoMovimentoChar = char.Parse(request.TipoMovimento);
 
             if (string.IsNullOrEmpty(request.TipoMovimento) ||
-                                    (tipoMovimentoChar == (char)TipoMovimento.Credito || tipoMovimentoChar == (char)TipoMovimento.Debito))
+                                    !(tipoMovimentoChar == (char)TipoMovimento.Credito || tipoMovimentoChar == (char)TipoMovimento.Debito))
             {
                 errors.Add(MensagemErroConstants.TipoMovimentoInvalidoKey);
             }
